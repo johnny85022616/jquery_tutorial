@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <script type="text/javascript">
+    $(function () {
+        //find 查詢子元素
+        // $("ul").find("li").css('background-color','orange'); //ul下的li元素(同 $(ul li))
+        $('ul').find(".box").css('background-color','orange') //ul下子元素class為box的節點
+        $('ul').find("[name=hello]").css('background-color','blue') //ul下子元素name為hello的節點
+        
+    });
+  </script>
+  <body>
+    <ul>
+        <li class="box"></li>
+        <li name="hello"></li>
+        <li class="box"></li>
+    </ul>
+    <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+  </body>
+  <style></style>
+</html>

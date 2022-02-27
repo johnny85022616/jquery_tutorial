@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <script type="text/javascript">
+    /*
+      animate 
+        默認的運動形式是慢快慢
+        均勻速度  "leaner"
+        慢快慢  "swing"
+
+      拓展更多animate的運動形式
+        引入jquer-ui
+    */
+
+    $(function () {
+        $('.div1').click(function(){
+            $('.div1').animate({
+                width:300,
+                height:300,
+            },4000,'linear')
+            $('.div2').animate({
+                width:300,
+                height:300,
+            },4000)
+        })
+        
+    });
+  </script>
+  <body>
+    <div class="div1"></div>
+    <div class="div2"></div>
+  </body>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+    }
+    .div1 {
+        background-color: orangered;
+    }
+    .div2 {
+        background-color: blue;
+    }
+  </style>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <script type="text/javascript">
+    
+    /*
+        jquery的工具方法和我們自己封裝的js方法沒有任何區別
+
+        jquery方法調用: $().xxx  前面必須為jquery對象才可調用
+        jquery工具方法: $.xxx 和調用普通js方法一樣，可為js對象也可為jquery對象
+            
+            type() 輸出當前數據類型 (原生js方法為typeof)
+            trim() 刪除前後空格  (原生js方法為trim())
+            inArray()  查找而素在array中的index(原生js方法為indexof())
+            proxy() 功能類似於bind
+            noConflit() 避免有人將$賦予其他值，造成所有jquery報錯的情況但不常用因為不太會有人去修改$
+            parseJSON()  (原生js方法為JSON.parse())
+            makeArray() 將偽數組轉為數組(原生js方法為Array.form())
+    */
+    $(function () {
+
+        //------------------------------------type-------------------------------------
+        // let arr=[1,2,3]
+        // let str = new String();
+        // let date = new Date()
+
+        // console.log(typeof arr);  //object
+        // console.log(typeof str);  //object 
+        // console.log(typeof date); //object
+        
+        // console.log($.type(arr));  //array
+        // console.log($.type(str));  //string 
+        // console.log($.type(date)); //date
+        //------------------------------------trim-------------------------------------
+        
+        // let str = "  a pp le  "
+        // console.log("|" + str + "|");
+        // console.log("|" + str.trim() + "|");  //原生js trim方法
+        // console.log("|" + $.trim(str) + "|"); //jquery trim方法
+
+        //------------------------------------inArray-------------------------------------
+
+        // let arr = [1,2,3]
+        // console.log($.inArray(2,arr));
+
+          //------------------------------------makeArray-------------------------------------
+
+          let nodes = document.getElementsByTagName("div")
+        //   nodes.push("123")  //會報nodes.push is not a function錯誤，表示nodes為一個偽數組
+          nodes = $.makeArray(nodes)
+          nodes.push("123")
+          console.log(nodes);
+
+    }); 
+  </script>
+  <body>
+       <div></div>
+       <div></div>
+       <div></div>
+       <div></div>
+  </body>
+  <style></style>
+</html>

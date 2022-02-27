@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <script type="text/javascript">
+      /*
+        『注』 下述所有方法的參數都是選擇器
+
+            siblings()   獲取當前節點外所有兄弟節點
+            nextAll() prevAll()
+            parentsUntil nextUntil() prevUntil()
+        */
+ 
+        $(function(){
+        //   $(".p1").siblings().css("backgroundColor" , 'blue') //所有兄弟節點
+        //   $(".p1").siblings('h2').css("backgroundColor" , 'blue') //兄弟節點中的h2
+        // $('.p1').prevAll().css("backgroundColor" , 'blue'); //在p1前的兄弟節點
+        // $('.p1').nextAll().css("backgroundColor" , 'blue'); //在p1後的兄弟節點
+        // $('.p1').prevUntil('h1').css("backgroundColor" , 'blue'); //p1之前到h1之後的節點(不包含h1)
+        // $('.p1').nextUntil('strong').css("backgroundColor" , 'blue'); //p1之前到strong之後的節點(不包含strong)
+        $('.p1').parentsUntil('body').css("backgroundColor" , 'blue')  //從p1開的父節點開始到body之間(不包含body所以只有div1)
+        })
+ 
+  </script>
+  <body>
+     <div class="div1">
+        <h1>h1</h1>
+        <h2>h2</h2>
+        <p class="p1">p</p>
+        <em>em</em>
+        <h3>h3</h3>
+        <strong>strong</strong>
+        <h6>h6</h6>
+        <h2></h2>
+     </div>
+     <h5>h5</h5>
+  </body>
+  <style>
+  </style>
+</html>

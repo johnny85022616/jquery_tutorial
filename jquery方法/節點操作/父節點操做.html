@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <script type="text/javascript">
+      /*
+        parent() //獲取父節點
+        parents() //獲取父節點們
+        closest() //必須傳入參數，參數也是選擇器，獲取從自己開始往上找第一個符合條件的元素(包含自己)
+        */
+ 
+        $(function(){
+            // $('.div2').parent().css("backgroundColor" , 'red')  // div2的父節點(div1)
+            // $('.div2').parents().css("backgroundColor" , 'red')  // div2往上找直到html(div1 , body , html)
+            // $('.div2').parents('#box').css("backgroundColor" , 'red')  //父節點中id為box的(div1 , body)
+            $('.div2').closest('#box').css("backgroundColor" , 'red') //匹配到第一個為box的父節點就不會繼續往上查找(div2)
+
+        })
+ 
+  </script>
+  <body id="box">
+     <div class="div1" id="box">
+         div1
+         <div class="div2" id="box">
+             div2
+         </div>
+     </div>
+  </body>
+  <style>
+  </style>
+</html>

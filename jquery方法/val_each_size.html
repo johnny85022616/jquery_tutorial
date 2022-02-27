@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <script type="text/javascript">
+    /*
+         val()  獲取表單元素的值
+         size() 輸出、獲取網頁元素個數 (jquery 1.8 後被棄用)
+    */
+
+    $(function () {
+      //    alert($('input').val())   //value() 取值只能取第一個符合條件元素的值
+      //    $('input').val("dddddd")  // 會對所有配對到的元素賦值(css() , attr() , html() 也都為批量賦值)
+
+      // alert($('input').size())  //jquery 1.8 後被棄用
+      // alert($('input').length)
+
+      $("input").each(function (index, item) {  //將符合條件的元素陣列遍歷出來
+        // item.value = index  //js 寫法
+        $(item).val(index); //jquery 寫法
+      });
+    });
+  </script>
+  <body>
+    <input type="text" value="aaa" />
+    <input type="text" value="bbb" />
+    <input type="text" value="ccc" />
+  </body>
+  <style>
+  </style>
+</html>

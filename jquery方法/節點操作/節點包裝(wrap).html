@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <script type="text/javascript">
+      /*
+       wrap() 每一個獲取到的元素節點單獨包裝
+       wrapAll() 整體包裝
+       wrapInner() 內部包裝
+       unwrap() 刪除包裝(不可傳參數)
+        */
+ 
+        $(function(){
+        //頁面上所有span節點加上一個包裝
+        //    $("span").wrap("<p class='box' title='hellow'></p>")
+
+        //將所有sapn集中一起包住
+        //    $("span").wrapAll("<p class='box' title='hellow'></p>")
+        
+        //將所有span節點中都插入一個p節點
+        // $("span").wrapInner("<p class='box' title='hellow'></p>")
+
+        //若找到的span有父元素就將父元素刪除，若沒有就不動作
+        $("span").unwrap()
+        })
+ 
+  </script>
+  <body>
+      <span>span</span>
+     <div class="div1">
+        <span>span</span>
+     </div>
+     <span>span</span>
+     <span>span</span>
+     <span>span</span>
+  </body>
+  <style>
+  </style>
+</html>

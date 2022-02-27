@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <script type="text/javascript">
+    /*
+          offset() //不管父節點有沒有定位(position)，都是回傳該節點和最左邊的距離(margin不算元素本體)
+          offsetParent() //查找第一個有定位的父節點，如果父節點沒定位就繼續往上找，直到找到html為止
+          position() 直接獲取最接近當前節點並且有定位的父節點間的距離
+       */
+
+    $(function () {
+        $('div').mousedown(function(ev){
+            let originpagex = ev.pageX  //最初滑鼠x座標
+            let originpagey = ev.pageY  //最初滑鼠y座標
+            let divx = $(this).offset().left; //最初拖曳元素x座標
+            let divy = $(this).offset().top;//最初拖曳元素y座標
+            let _this = this
+            $(document).mousemove(function(event){
+                let pagex = event.pageX  //最後滑鼠x座標
+                let pagey = event.pageY  //最後滑鼠y座標
+
+                let movex = pagex - originpagex   //滑鼠水平移動距離
+                let movey = pagey - originpagey   //滑鼠垂直移動距離
+                $(_this).css({
+                    left: divx + movex , //元素最後x座標 = 最初元素x座標 + 滑鼠水平移動距離
+                    top: divy + movey  //元素最後y座標 = 最初元素y座標 + 滑鼠垂直移動距離
+                })
+            })
+        })
+        $(document).mouseup(function(){
+            $(document).off("mousemove")
+        })
+    });
+  </script>
+  <body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </body>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+      position: absolute;
+    }
+    
+  </style>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <script type="text/javascript">
+    $(function () {
+        //attr 設置和修改行間屬性
+        
+        //取得屬性
+        console.log($('#div1').attr('class'));
+        console.log($('#div1').attr('id'));
+        console.log($('#div1').attr('title'));
+
+        //設置屬性
+        // $("#div1").attr("title" , "world")
+        // $("#div1").attr("class" , "box1")
+
+        //一次性設置屬性(物件形式傳入)
+        $("#div1").attr({
+            class:'box1',
+            title:'world1'
+        })
+    });
+  </script>
+  <body>
+     <div class="box" id="div1" title="hello"></div>
+  </body>
+  <style></style>
+</html>

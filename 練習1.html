@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<script type="text/javascript"> 
+$(document).ready(function(){
+  console.log("111111");
+  $(".root").click(function(){
+    alert("click")
+  });
+  $(".external div").css('backgroundColor' , 'yellow') //class為external內的所有div標籤
+  $("[name=external]").css('backgroundColor', 'green') // name 選擇寫法
+});
+</script>
+<body>
+    <div class="root red">
+        我是root
+    </div>
+    <div class="red">red</div>
+    <div class="external" name="external">外元素
+        <div>內元素</div>
+    </div>
+</body>
+<style>
+    .red{
+        background:red;
+    }
+</style>
+</html>

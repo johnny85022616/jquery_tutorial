@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <script type="text/javascript">
+    /*
+            preventDefault stopProgagation
+
+            which 
+                滑鼠事件:button
+                1 --> 左鍵    
+                2 --> 滾輪    
+                3 --> 右鍵     
+                
+                keydown:keyCode 鍵碼 (大小寫一樣)
+                keypress:charCode 字符碼  (大小寫不一樣)
+      */
+
+    $(function () {
+      $("div").click(function (event) {
+        alert($(this).attr("class")); //會出現冒泡
+        event.stopPropagation(); //阻止冒泡
+      });
+      $("a").click(function (event) {
+        alert("a is click");
+        // event.preventDefault() //阻止默認行為
+        // event.stopPropagation()  //阻止冒泡
+
+        //同時阻止事件冒泡及默認行為(直接return false)
+        return false;
+      });
+      $(document).mousedown(function (event) {
+        alert(event.which);
+      });
+      $(window).keydown(function (event) {
+        alert(event.which);
+      });
+      $(window).keypress(function (event) {
+        alert(event.which);  
+      });
+    });
+  </script>
+  <body>
+    <div class="div1">
+      <div class="div2">
+        <div class="div3">
+          <a href="http://www.google.com">google</a>
+        </div>
+      </div>
+    </div>
+  </body>
+  <style>
+    div {
+      padding: 50px;
+    }
+    .div1 {
+      background-color: red;
+    }
+    .div2 {
+      background-color: blue;
+    }
+    .div3 {
+      background-color: orange;
+    }
+  </style>
+</html>

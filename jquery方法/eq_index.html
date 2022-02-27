@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <script type="text/javascript">
+    $(function () {
+        //index 查找該元素在兄弟節點中的index值
+        console.log($("h3").index()); //h3在兄弟節點中的index值
+        //eq 查找指定節點
+        $('li').eq(3).css('background-color','blue') //選取i nedx為3的li
+
+    });
+  </script>
+  <body>
+      <strong>strong</strong>
+      <em>em</em>
+      <div class="div1">
+        <h2>h2</h2>
+        <p>p</p>
+        <h3>h3</h3>
+        <em>em</em>
+        <div>div</div>
+      </div>
+      <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+      </ul>
+  </body>
+  <style></style>
+</html>

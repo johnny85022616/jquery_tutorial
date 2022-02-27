@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <script type="text/javascript">
+      /*
+         ready事件
+         $(document).ready() 事件觸發在當前document加載完成後執行
+
+         document 加載完畢肯定是在 window 加載完畢之前
+        */
+
+    window.onload = function(){
+        alert('window.onload')
+    }
+    $(function () {
+        alert('$(funcion(){})')
+    });
+    $(document).ready(function(){
+        alert('$(document).ready()')
+    })
+  </script>
+  <body>
+     
+  </body>
+  <style>
+  </style>
+</html>

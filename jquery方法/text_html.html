@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <script type="text/javascript">
+      /*
+            jquery 標籤間的內容 html() 相當於 innerHtml
+            jquery 標籤間純文本 text() 相當於 innerText
+        */
+
+        $(function(){
+            // alert($('.div1').html())  //<em>em</em>div本文<strong>strong</strong>
+            // alert($('.div1').text())  //emdiv本文strong
+
+            // $('.div1').html("<h1>hello world</h1>")  //會自動解析
+            $('.div1').text("<h1>hello world</h1>") //不會自動解析 
+        })
+ 
+  </script>
+  <body>
+     <div class="div1"><em>em</em>div本文<strong>strong</strong></div>
+  </body>
+  <style>
+  </style>
+</html>

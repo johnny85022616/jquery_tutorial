@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <script type="text/javascript">
+      /*
+        原生js offsetWidth = width + padding + border 
+       */
+    $(function () {
+       console.log($('div1').width());
+       console.log($('div1').innerWidth());  //width + padding
+       console.log($('div1').outerWidth());  //width + padding + border 
+       console.log($('div1').outerWidth(true));  //width + padding + border + margin
+    });
+  </script>
+  <body>
+     <div class="div1"></div>
+  </body>
+  <style>
+      .div1{
+          width: 100px;
+          height: 100px;
+          background-color: red;
+          border: 1px solid black;
+          padding: 8px;
+      }
+  </style>
+</html>

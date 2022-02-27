@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <script type="text/javascript">
+    $(function () {
+      //取值
+      console.log($(".div1").html());
+      //賦值
+      $('.div1').html("<div>我是新賦值的</div>")
+      //取值
+      console.log($("input").val());
+      //賦值
+      $('input').val("helloword")
+    });
+  </script>
+  <body>
+    <div class="div1">
+      <em>em</em>
+      div本文
+    </div>
+    <input type="text" value="12345" />
+  </body>
+  <style></style>
+</html>

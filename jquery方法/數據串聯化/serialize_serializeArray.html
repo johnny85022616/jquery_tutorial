@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <script type="text/javascript">
+    
+    /*
+        seriable() 將我們表單中的數據併接城queryString (name1=value1&name2=value2) 
+        search  ?name1=value1&name2=value2
+        querystring name1=value1&name2=value2
+
+        seriableArray() 將表單數據拼接成array
+    */
+    $(function () {
+       alert($("input").serialize()); // name1=value1&name2=value2
+       console.log(($("input").serializeArray())); //[{name: 'a', value: '1'},{name: 'b', value: '2'},{name: 'c', value: '3'} ]
+
+        
+    });
+  </script>
+  <body>
+        <input type="text" name="a" value="1">
+        <input type="text" name="b" value="2">
+        <input type="text" name="c" value="3">
+  </body>
+  <style></style>
+</html>

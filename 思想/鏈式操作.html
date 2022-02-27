@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<script type="text/javascript"> 
+ 
+$(function(){
+    //和分開寫是一樣的，只要是對同一個東西給綁定事件就可以用鏈式寫法
+    $('div').click(function(){
+       this.style.backgroundColor = 'red'
+    }).mouseover(function(){
+        this.style.backgroundColor = "yellow"
+    }).mouseout(function(){
+        this.style.backgroundColor = "blue"
+    })
+})
+</script>
+<body>
+    <div class="">click</div>
+</body>
+<style>
+    
+</style>
+</html>

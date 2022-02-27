@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <script type="text/javascript">
+    /*
+          
+       */
+
+    $(function () {
+    // --------------------------------- on -----------------------------------
+
+    //繼有選擇器所選到的元素才可綁定方法，後來新增的元素則綁定不到該方法
+      // $('.div1').click(function(){
+      //     alert(1)
+      // })
+
+      // 1.給一個事件添加一個函數
+      // $('.div1').on('click' , function(){
+      //     alert(1)
+      // })
+
+      // 2.給多個事件添加一個函數
+      // var i = 0 ;
+      // $('div').on('click mouseover' , function(){
+      //     $(this).html(++i)
+      // })
+
+      // 3.給不同事件添加不同函數
+      $(".div1").on({
+        click: function () {
+          alert("click");
+        },
+        mouseover: function () {
+          $(this).css("backgroundColor", "orange");
+        },
+        mouseout: function () {
+          $(this).css("backgroundColor", "blue");
+        },
+      });
+      // 4.事件委託 (动态创建的元素在该选择器选中范围内是能触发回调函数。)
+      $('ul').on('click' , 'li' , function(){
+        $(this).css("backgroundColor",'red')
+      })
+      var i=6 ;
+      $('.button1').click(function(){   //新增後的li元素在ul範圍內所以也可綁定函數
+        $('ul').append(`<li>${i++ * 1111}</li>`)
+      })
+
+      // --------------------------------- off -----------------------------------
+
+      const show = function (){
+        alert(1234)
+      }
+
+      $('.div2').click(show)
+
+
+      $(".cancel").click(function(){
+        // $(".div1").off()  // 取消選擇器內所有事件上的所有函數
+        // $('.div1').off('click') // 取消某個事件所綁定的所有函數
+        $('.div2').off('click' , show)  //取消某個事件所綁定的某個函數(綁定的函數必須有名字)
+      })  
+    });
+  </script>
+  <body>
+    <div class="div1"></div>
+    <ul>
+      <li>1111</li>
+      <li>2222</li>
+      <li>3333</li>
+      <li>4444</li>
+      <li>5555</li>
+    </ul>
+    <button class='button1'>新增</button>
+    <button class='cancel'>取消</button>
+    <div class="div2"></div>
+  </body>
+  <style>
+    .div1 {
+      background-color: red;
+      width: 100px;
+      height: 100px;
+    }
+    .div2 {
+      background-color: pink;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</html>

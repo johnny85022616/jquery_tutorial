@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <script type="text/javascript">
+    $(function () {
+      // prev 查找當前兄弟節點中的上一節點
+      $('h3').prev().css('background-color','orange');
+      // next 查找當前兄弟節點中的下一節點
+      $('h3').next().css('background-color','blue');
+    });
+  </script>
+  <body>
+    <h2>h2</h2>
+    <p>p</p>
+    <h3>h3</h3>
+    <em>em</em>
+    <div>div</div>
+  </body>
+  <style></style>
+</html>

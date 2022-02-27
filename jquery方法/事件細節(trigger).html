@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <script type="text/javascript">
+    
+    /*
+        。trigger() 主動觸發
+        。ev.data
+            ev.target
+            ev.type
+    */
+    $(function () {
+        // target 及 type 展示
+        // $('button').click(function(ev){
+        //     alert(ev.type);
+        //     alert(ev.target);
+        // })
+
+        //  data配合on使用(要傳入事件回調函數中的參數寫在on中，並在回調函數中使用ev.data取得 )
+        // $('button').on('click' , {name:'johnny' , age:18} , function(ev){
+        //     console.log(ev.data);
+        //     console.log(ev.data.name);
+        //     console.log(ev.data.age);
+        // })
+
+        // $('button').click(function(){
+        //     console.log("12345");
+        // })
+
+        //主動觸發選擇器掛載的事件
+        // $('button').trigger('click')
+        
+
+        //trigger 除了可以觸發官方定義的事件外，也可以觸發我們自定義的事件
+        //範例為音樂播放器
+        $(".play").on('play' , function(){
+            alert('開始播放音樂')
+        })
+        $(".play").on('next' , function(){
+            alert("切換到下一首歌")
+        })
+
+        $('button').eq(0).on('click' , function(){
+            $('.play').trigger('play')
+        })
+        $('button').eq(1).on('click' , function(){
+            $('.play').trigger('next')
+        })
+    });
+  </script>
+  <body>
+        <!-- <button>按鈕</button> -->
+        <button>播放</button>
+        <button>下一首</button>
+        <div class="play"></div>
+  </body>
+  <style></style>
+</html>

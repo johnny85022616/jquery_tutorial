@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <script type="text/javascript">
+      /*
+          。insetBefore()   before()
+          。insertAfter()   after()
+          。appendTo()      append()
+          。prependTo()     prepend()
+       */
+
+
+    $(function () {
+     // (1)將span節點插入到div前面
+        // $('span').insertBefore($('div'))
+     // (2)將div節點插入到span節點後面
+        // $('div').insertAfter($('span'))
+     //將span節點插入div子節點的最末端
+        // $('span').appendTo($('div'))
+     //將span節點插入div子節點的最前端
+        // $('span').prependTo($('div'))
+    //div節點前是span   
+        // $('div').before($('span'))  //結果如(1)  剩下的以此類推
+        
+        //兩者的結果皆為span在div前面，但兩者主體不同，後續若操作則影響的目標也不一樣 
+        // $('span').insertBefore('div').css('background-color' , 'red')  //span為主體
+        // $('div').before($('span')).css('background-color' , 'red')  //div為主體
+
+        
+
+    });
+  </script>
+  <body>
+     <div class="div1">
+        <em>em</em>
+        div本文
+     </div>
+     <span>span</span>
+  </body>
+  <style>
+     
+  </style>
+</html>

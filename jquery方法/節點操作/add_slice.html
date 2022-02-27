@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <script type="text/javascript">
+    /*
+        add()  可以將多個選擇棄拼接在一起
+        slice(start , end) 獲取指定範圍選中的元素節點(包括開始位置，不包括結束位置) 
+        */
+
+    $(function () {
+      //不同選擇器中有相同代碼
+      //   $('div')
+      //   .css("backgroundColor", "red")
+      //   .click(function(){
+      //     alert("click")
+      //   })
+      //   .hover(function(){
+      //     $(this).css("backgroundColor", "green")
+      //   },function(){
+      //     $(this).css("backgroundColor", "blue")
+      //   })
+
+      //   $('span')
+      //   .css("backgroundColor", "red")
+      //   .click(function(){
+      //     alert("click")
+      //   })
+      //   .hover(function(){
+      //     $(this).css("backgroundColor", "green")
+      //   },function(){
+      //     $(this).css("backgroundColor", "blue")
+      //   })
+
+      //   $('ul li')
+      //   .css("backgroundColor", "red")
+      //   .click(function(){
+      //     alert("click")
+      //   })
+      //   .hover(function(){
+      //     $(this).css("backgroundColor", "green")
+      //   },function(){
+      //     $(this).css("backgroundColor", "blue")
+      //   })
+
+      //  可將上面代碼簡化為以下代碼(串連不同選擇器)
+
+      // $("div")
+      //   .add("span")
+      //   .add("ul li")
+      //   .css("backgroundColor", "red")
+      //   .click(function () {
+      //     alert("click");
+      //   })
+      //   .hover(
+      //     function () {
+      //       $(this).css("backgroundColor", "green");
+      //     },
+      //     function () {
+      //       $(this).css("backgroundColor", "blue");
+      //     }
+      //   );
+
+        //此寫法同上，但選擇器個數多的時候容易很亂所以不推薦
+        // $("div , span , ul li")
+        // .css("backgroundColor", "red")
+        // .click(function () {
+        //   alert("click");
+        // })
+        // .hover(
+        //   function () {
+        //     $(this).css("backgroundColor", "green");
+        //   },
+        //   function () {
+        //     $(this).css("backgroundColor", "blue");
+        //   }
+        // );
+
+        $('ul li').slice(1,4).css("backgroundColor" , "red") //index 1~3被選取
+        
+    });
+  </script>
+  <body>
+    <div>div</div>
+    <span>span</span>
+    <p>p</p>
+    <ul>
+      <li>1111</li>
+      <li>1111</li>
+      <li>1111</li>
+      <li>1111</li>
+      <li>1111</li>
+    </ul>
+  </body>
+  <style></style>
+</html>

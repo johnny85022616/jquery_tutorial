@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <script type="text/javascript">
+      /*
+         clone() 默認只會克隆節點本身，並不會克隆元素節點的行為或事件
+         clone(true) 既會克隆節點本身，還會克隆元素節點的行為事件
+       */
+
+
+    $(function () {
+        $('button').click(function(){
+            
+            // var node = $('.div1').clone();
+            var node = $('.div1').clone(true)
+            node.appendTo($('.div2'))
+        })
+
+        $(".div1").hover(function(){
+            $(this).css("backgroundColor" , "orange")
+        },function(){
+            $(this).css("backgroundColor" , "blue")
+        })
+    });
+  </script>
+  <body>
+     <div class="div1" title="hello"></div>
+     <div class="div2"></div>
+     <button>clone</button>
+  </body>
+  <style>
+     .div1{
+         width:100px;
+         height:100px;
+         background-color: red;
+     }
+     .div2{
+         width:200px;
+         height:200px;
+         border:1px solid black;
+     }
+  </style>
+</html>

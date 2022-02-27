@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <script type="text/javascript">
+    
+    /*
+
+        若要給jquery新增函數，通過下述兩個插件方法拓展函數庫
+        $.extend()  拓展工具方法 建立出來的方法用 $.xxx 形式呼叫
+        $.fn.extend() 拓展jquery方法，拓展出的方法用 $().xxx形式呼叫
+    */
+
+    $.extend({
+           aaa:function(){
+               alert("工具方法")
+           }
+       })
+
+       $.fn.extend({
+           aaa:function(){
+               alert("jquery方法")
+           }, 
+           drag:function(){
+               $(this).mousedown(function(ev){
+                   let offsetX = ev.pageX - $(this).offset().left;
+                   let offsetY = ev.pageY - $(this).offset().top;
+                   let _this = this
+                 $(document).mousemove(function(ev){
+                     $(_this).css({
+                         left: ev.pageX - offsetX ,
+                         top: ev.pageY - offsetY
+                     })
+                 })
+                 
+               })
+               $(document).mouseup(function(ev){
+                 $(document).off("mousemove")
+               })
+               return this;  //若後續要做鏈式操作則需要將 this return出去
+           }
+       })
+        
+    $(function () {
+        // $.aaa()
+        // $("div").aaa()
+        $('div').add("p").add('em').drag().hover(function(){
+            $(this).css("backgroundColor" , 'blue')
+        },function(){
+            $(this).css("backgroundColor" , 'orange')
+        })
+      
+    }); 
+  </script>
+  <body>
+       <div></div>
+       <div></div>
+       <div></div>
+       <div></div>
+       <p>12345678</p>
+       <em>em</em>
+  </body>
+  <style>
+      div{
+          width: 100px;
+          height: 100px;
+          background-color: orange;
+          position: absolute;
+      }
+      p,em{
+          position:absolute;
+          background-color: orange;
+      }
+  </style>
+</html>

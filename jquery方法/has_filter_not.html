@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <script type="text/javascript">
+    $(function () {
+        //filter
+        // $('div').filter('.box').css('background-color','orange') //從所有div元素中過濾出class為box的元素
+        //not 
+        // $('div').not('.box').css('background-color','orange') //從所有div元素中過濾出class不為box的元素
+        //has
+        $('div').has('.box').css('background-color','orange') //子節點中有class為box的元素存在，則該節點會被選中(非子節點被選中)
+    });
+  </script>
+  <body>
+    <div class="box">
+        div1
+        <div style="background-color: green;">div1-1
+            <div class="box" style="background-color: gray;">div1-1-1</div>
+        </div>
+    </div>
+    <div>
+        div2
+        <strong class="box">
+666
+        </strong> 
+    </div>
+  </body>
+  <style></style>
+</html>

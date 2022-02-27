@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <script type="text/javascript">
+    /*
+      hover(fun1 , func2)  * func1 移入回調， func2 移出回調
+
+      hide(time , func)   show(time , func)
+        * time 為動畫持續毫秒數 func為動畫結束後的回調函數
+        『注』動畫效果是從左上角收起和從左上角展開
+
+      slideUp() slideDown() 使用方法和hide()及show一樣，只是動畫效果是由上到下 
+      fadeIn() fadeOut()  使用方法和hide()及show一樣，只是動畫是淡化效果
+      fadeTo(time , 透明度 , func) 和fadeIn及fadeOut很像，只是多了一個參數設定透明度
+    */
+
+    $(function () {
+        $('.div1').hover(function(){
+          //  $('.div2').hide(2000 , function(){
+          //    $('.div1').html('移入')
+          //  })
+          // $('.div2').slideUp(2000 , function(){
+          //    $('.div1').html('移入')
+          //  })
+          //  $('.div2').fadeOut(2000 , function(){
+          //    $('.div1').html('移入')
+          //  })
+          $('.div2').fadeTo(2000 , 0.5 , function(){
+             $('.div1').html('移入')
+           })
+           
+        } , function(){
+          // $('.div2').show(2000 , function(){
+          //    $('.div1').html('移出')
+          //  })
+          // $('.div2').slideDown(2000 , function(){
+          //    $('.div1').html('移出')
+          //  })
+          //  $('.div2').fadeIn(2000  , function(){
+          //    $('.div1').html('移出')
+          //  })
+          $('.div2').fadeTo(2000 , 1 , function(){
+             $('.div1').html('移出')
+           })
+        })
+        
+    });
+  </script>
+  <body>
+    <div class="div1"></div>
+    <div class="div2"></div>
+  </body>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+    }
+    .div1 {
+        background-color: orangered;
+    }
+    .div2 {
+        background-color: blue;
+    }
+  </style>
+</html>
