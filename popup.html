@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<script type="text/javascript"> 
+$(document).ready(function(){
+    $(".open").click(function(){
+        $('.popup').toggleClass("in")
+    })
+    $(".close").click(function(){
+        $('.popup').toggleClass("in")
+    })
+});
+</script>
+<body>
+   <div>
+       <button class="open">彈出視窗</button>
+       <div class="popup">
+                <div class="close">X</div>
+       </div>
+   </div>
+</body>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    .popup{
+        width:400px;
+        height:400px;
+        position: fixed;
+        top:calc(50% - 200px);
+        left:calc(50% - 200px);
+        border:1px solid black;
+        box-sizing: border-box;
+        text-align: right;
+        display: none;
+    }
+    .close{
+        width: 20px;
+        height: 20px;
+        border: 1px solid black;
+        display: inline-block;
+        line-height: 20px;
+    }
+    .in{
+        display: block;
+    }
+</style>
+</html>

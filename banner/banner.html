@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <script type="text/javascript">
+      $(function(){
+            let aBtns = $('#play ol li');
+            var ul = $('#play ul');
+            var ali = ul.find('li')  
+            let now =0 ;
+            
+            aBtns.click(function(){
+                now = $(this).index();
+                aBtns.attr('class', '').eq(now).attr("class" , 'active')
+            })
+
+            setInterval(function(){
+               if(now == aBtns.length-1){
+                   now = 0
+               }else{
+                   now++;
+               }
+               aBtns.attr('class', '').eq(now).attr("class" , 'active')
+               ul.animate({
+                   top:-150*now
+               },500)
+            } , 1000);  
+
+          
+
+
+
+        
+      })
+
+  </script>
+  <body>
+       <div class="play" id="play">
+           <ol>
+               <li class="active">1</li>
+               <li>2</li>
+               <li>3</li>
+               <li>4</li>
+               <li>5</li>
+           </ol>
+           <ul>
+               <li><a href="http://www.google.com"><div class="d1">111</div></a></li>
+               <li><a href="http://www.google.com"><div class="d2">222</div></a></li>
+               <li><a href="http://www.google.com"><div class="d3">333</div></a></li>
+               <li><a href="http://www.google.com"><div class="d4">444</div></a></li>
+               <li><a href="http://www.google.com"><div class="d5">555</div></a></li>
+           </ul>
+       </div>
+  </body>
+  <style>
+      *{padding:0 ; margin: 0;}
+      li{list-style: none;}
+      img{border: none;}
+      .play{
+          width:470px;
+          height: 150px;
+          position: relative;
+          margin:150px auto 0;
+          overflow: hidden;
+      }
+      ol{
+        position: absolute;
+        right:5px;
+        bottom:5px;
+        z-index: 2;
+      }
+      ol li{
+          margin-right:3px;
+          display: inline;
+          cursor: pointer;
+          background-color: white;
+          border: 1px solid red;
+          float: left;
+      }
+      .active{
+          padding:3px 8px;
+          font-weight: bold;
+          color:white;
+          background-color: orange;
+          position: relative;
+          bottom: 2px;
+      }
+      ul{
+          position: absolute;
+          top:0;
+          left:0;
+          z-index: 1;
+        }
+      ul li{
+          width: 470px;
+          height:150px;
+      }
+      ul div{
+        width: 470px;
+          height:150px;
+      }
+      ul .d1{
+          background-color: green;
+      }
+      ul .d2{
+          background-color: red;
+      }
+      ul .d3{
+          background-color: yellow;
+      }
+      ul .d4{
+          background-color: blue;
+      }
+      ul .d5{
+          background-color: pink;
+      }
+
+  </style>
+</html>
